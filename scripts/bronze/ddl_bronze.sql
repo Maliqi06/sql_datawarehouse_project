@@ -1,15 +1,26 @@
+/*
+===============================================================================
+DDL Script: Create Bronze Tables
+===============================================================================
+Script Purpose:
+    This script creates tables in the 'bronze' schema, dropping existing tables 
+    if they already exist.
+	  Run this script to re-define the DDL structure of 'bronze' Tables
+===============================================================================
+*/
+
 IF OBJECT_ID('bronze.restaurant_cons_pref', 'U') IS NOT NULL
-	DROP TABLE bronze.restaurant_cons_pref;
+    DROP TABLE bronze.restaurant_cons_pref;
 GO
 
 CREATE TABLE bronze.restaurant_cons_pref (
-	consumer_id NVARCHAR(50),
-	preferred_cuisine NVARCHAR(50)
+    consumer_id NVARCHAR(50),
+    preferred_cuisine NVARCHAR(50)
 );
 GO
 
-IF OBJECT_ID('bronze.restaurant_cons', 'U') IS NOT NULL
-	DROP TABLE bronze.restaurant_cons;
+IF OBJECT_ID('bronze.restaurant_cons', 'U') IS NOT NULL	
+    DROP TABLE bronze.restaurant_cons;
 GO
 
 CREATE TABLE bronze.restaurant_cons (
@@ -31,12 +42,12 @@ CREATE TABLE bronze.restaurant_cons (
 GO
 
 IF OBJECT_ID('bronze.restaurant_rest', 'U') IS NOT NULL
-	DROP TABLE bronze.restaurant_rest;
+    DROP TABLE bronze.restaurant_rest;
 GO
 
 CREATE TABLE bronze.restaurant_rest(
     restaurant_ID NVARCHAR(50),
-	name_of_restaurant NVARCHAR(100),
+    name_of_restaurant NVARCHAR(100),
     city NVARCHAR(50),
     state_info NVARCHAR(50),
     country NVARCHAR(50),
@@ -53,12 +64,12 @@ CREATE TABLE bronze.restaurant_rest(
 GO
 
 IF OBJECT_ID('bronze.restaurant_rest_cui', 'U') IS NOT NULL
-	DROP TABLE bronze.restaurant_rest_cui;
+    DROP TABLE bronze.restaurant_rest_cui;
 GO
 
 CREATE TABLE bronze.restaurant_rest_cui (
-	restaurant_ID int,
-	cuisine NVARCHAR(50)
+    restaurant_ID int,
+    cuisine NVARCHAR(50)
 );
 GO
 
