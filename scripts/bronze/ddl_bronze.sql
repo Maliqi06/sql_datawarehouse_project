@@ -36,7 +36,7 @@ GO
 
 CREATE TABLE bronze.restaurant_rest(
     restaurant_ID NVARCHAR(50),
-    name_of_restaurant NVARCHAR(100),
+	name_of_restaurant NVARCHAR(100),
     city NVARCHAR(50),
     state_info NVARCHAR(50),
     country NVARCHAR(50),
@@ -52,11 +52,11 @@ CREATE TABLE bronze.restaurant_rest(
 );
 GO
 
-IF OBJECT_ID('bronze.restaurant_cui', 'U') IS NOT NULL
-	DROP TABLE bronze.restaurant_cui;
+IF OBJECT_ID('bronze.restaurant_rest_cui', 'U') IS NOT NULL
+	DROP TABLE bronze.restaurant_rest_cui;
 GO
 
-CREATE TABLE bronze.restaurant_cui (
+CREATE TABLE bronze.restaurant_rest_cui (
 	restaurant_ID int,
 	cuisine NVARCHAR(50)
 );
