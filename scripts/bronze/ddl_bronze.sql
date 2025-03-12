@@ -35,7 +35,8 @@ IF OBJECT_ID('bronze.restaurant_rest', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.restaurant_rest(
-    restaurant_ID NVARCHAR(50),  
+    restaurant_ID NVARCHAR(50),
+    name_of_restaurant NVARCHAR(100),
     city NVARCHAR(50),
     state_info NVARCHAR(50),
     country NVARCHAR(50),
