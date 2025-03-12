@@ -17,8 +17,8 @@ CREATE TABLE bronze.restaurant_cons (
     city NVARCHAR(50),
     state_info NVARCHAR(50),
     country NVARCHAR(50),
-    latitude DECIMAL(9, 6),
-    longitude DECIMAL(9, 6),
+    latitude DECIMAL(15, 10),
+    longitude DECIMAL(15, 10),
     smoker NVARCHAR(30),
     drink_Level NVARCHAR(50),
     transportation_Method NVARCHAR(50),
@@ -35,13 +35,13 @@ IF OBJECT_ID('bronze.restaurant_rest', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.restaurant_rest(
-    restaurant_ID NVARCHAR(50) PRIMARY KEY,  
-    city NVARCHAR(100),
-    state_info NVARCHAR(100),
-    country NVARCHAR(100),
-    zip_Code NVARCHAR(20),
-    latitude DECIMAL(30, 30),
-    longitude DECIMAL(30, 30),
+    restaurant_ID NVARCHAR(50),  
+    city NVARCHAR(50),
+    state_info NVARCHAR(50),
+    country NVARCHAR(50),
+    zip_Code NVARCHAR(30),
+    latitude DECIMAL(15, 10),
+    longitude DECIMAL(15, 10),
     alcohol_Service NVARCHAR(30),  
     smoking_Allowed NVARCHAR(30),  
     price NVARCHAR(50),  
@@ -66,7 +66,7 @@ IF OBJECT_ID('bronze.restaurant_rat', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.restaurant_rat (
-	consumer_ID NVARCHAR(50),
+    consumer_ID NVARCHAR(50),
     restaurant_ID INT,
     overall_Rating INT,
     food_Rating INT,
