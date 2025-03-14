@@ -17,12 +17,14 @@ Usage Example:
 ===============================================================================
 */
 
+EXEC bronze.load_bronze;
+
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN	
 	
 	TRUNCATE TABLE bronze.restaurant_rest_cui;
 	BULK INSERT bronze.restaurant_rest_cui
-	FROM 'C:\Users\Andi\Desktop\restaurant\restaurant_cuisines.csv'
+	FROM 'C:\SQL2022\restaurant/restaurant_cuisines.csv'
 	WITH (
 		FIRSTROW = 2,
 		FIELDTERMINATOR = ',',
@@ -31,7 +33,7 @@ BEGIN
 
 	TRUNCATE TABLE bronze.restaurant_rest
 	BULK INSERT bronze.restaurant_rest
-	FROM 'C:\Users\Andi\Desktop\restaurant\restaurants.csv'
+	FROM 'C:\SQL2022\restaurant\restaurants.csv'
 	WITH (
 		FIRSTROW = 2,
 		FIELDTERMINATOR = ',',
@@ -40,7 +42,7 @@ BEGIN
 
 	TRUNCATE TABLE bronze.restaurant_rat
 	BULK INSERT bronze.restaurant_rat
-	FROM 'C:\Users\Andi\Desktop\restaurant\ratings.csv'
+	FROM 'C:\SQL2022\restaurant\ratings.csv'
 	WITH (
 		FIRSTROW = 2,
 		FIELDTERMINATOR = ',',
@@ -49,7 +51,7 @@ BEGIN
 
 	TRUNCATE TABLE bronze.restaurant_cons
 	BULK INSERT bronze.restaurant_cons
-	FROM 'C:\Users\Andi\Desktop\restaurant\consumers.csv'
+	FROM 'C:\SQL2022\restaurant\consumers.csv'
 	WITH (
 		FIRSTROW = 2,
 		FIELDTERMINATOR = ',',
@@ -58,7 +60,7 @@ BEGIN
 
 	TRUNCATE TABLE bronze.restaurant_cons_pref
 	BULK INSERT bronze.restaurant_cons_pref
-	FROM 'C:\Users\Andi\Desktop\restaurant\consumer_preferences.csv'
+	FROM 'C:\SQL2022\restaurant\consumer_preferences.csv'
 	WITH (
 		FIRSTROW = 2,
 		FIELDTERMINATOR = ',',
